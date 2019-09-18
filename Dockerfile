@@ -18,6 +18,8 @@ ENV DRUID_HOME /servers/druid
 ADD Dockerfile /
 ADD README.md /
 
+RUN mkdir $DRUID_HOME/var/tmp
+
 CMD ["/bin/bash"]
 
 # Druid ports
