@@ -2,5 +2,5 @@
 
 CONTAINER_NAME=druid
 
-docker rm -f $CONTAINER_NAME
+sudo docker rm -f $CONTAINER_NAME
 

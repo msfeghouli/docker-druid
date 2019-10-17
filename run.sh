@@ -3,7 +3,7 @@
 IMAGE_NAME=teamsprint/druid:0.9.1
 CONTAINER_NAME=druid
 
-docker run -d -it --name $CONTAINER_NAME \
+sudo docker run -d -it --name $CONTAINER_NAME \
            -p 18088:8088 \
            -p 18042:8042 \
            -p 18081:8081 \
@@ -11,5 +11,5 @@ docker run -d -it --name $CONTAINER_NAME \
            -p 18090:8090 \
            -p 18091:8091 \
            --privileged $IMAGE_NAME /usr/sbin/init
-docker exec -it $CONTAINER_NAME /bin/bash
+sudo docker exec -it $CONTAINER_NAME /bin/bash
 

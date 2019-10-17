@@ -15,7 +15,11 @@ teamsprint/hive:2.3
 
 # Build the image
 
+Copy the druid binary into the build directory (Dockerfile, build.sh, etc.)
+
 run build.sh
+
+You can give the druid binary as an argument, but it's not recommended.
 
 # Start a container
 
@@ -27,23 +31,26 @@ The container name is "druid". If you don't want, just edit the scripts.
 
 run attach.sh
 
-# Destroy containers (
+# Destroy containers
 
 run destroy.sh
 
 # IMPORTANT: After attach you might to want to to:
-./hadoop-start.sh   (Mandatory)
-./hadoop-test.sh
-./start-mysql.sh
-./init-pw.sh (MySQL setup)
-./init-db.sh (Hive metastore setup)
+./start-hadoop.sh (HDFS & Yarn)<br/>
+./test-hadoop.sh (Optional)<br/>
 
-cd $DRUID_HOME
-./start-single.sh   (Mandatory)
+./init-mysql.sh (MySQL setting)<br/>
+
+./start-mysql.sh (optional)<br/>
+./conn-mysql.sh (Optional)<br/>
+
+./init-hive-metastore.sh<br/>
+./start-hive.sh<br/>
+
+cd $DRUID_HOME<br/>
+./start-single.sh<br/>
 
 # Test
-
-
-
-
+# When you run by run.sh, Overlord is at localhost:18090
+# You can see other ports in run.sh
 
