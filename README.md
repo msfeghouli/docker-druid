@@ -7,11 +7,11 @@ teamsprint/druid:0.9.1
 
 # Based on (in a row)
 
-teamsprint/centos:7
-teamsprint/jdk:8
-teamsprint/hadoop:2.7.3
-teamsprint/mysql:5.7
-teamsprint/hive:2.3
+teamsprint/centos:7<br/>
+teamsprint/jdk:8<br/>
+teamsprint/hadoop:2.7.3<br/>
+teamsprint/mysql:5.7<br/>
+teamsprint/hive:2.3<br/>
 
 # Build the image
 
@@ -40,15 +40,18 @@ run destroy.sh
 ./test-hadoop.sh (Optional)<br/>
 
 ./init-mysql.sh (MySQL setting)<br/>
-
-./start-mysql.sh (optional)<br/>
+./start-mysql.sh (Optional; already started by init-mysql.sh)<br/>
 ./conn-mysql.sh (Optional)<br/>
+./stop-mysql.sh (Optional)<br/>
 
-./init-hive-metastore.sh<br/>
-./start-hive.sh<br/>
+./init-hive-metastore.sh (Mandatory)<br/>
+./start-hive.sh (Optional)<br/>
+./conn-hive.sh (Optional)<br/>
+./stop-hive.sh (Optional)<br/>
 
 cd $DRUID_HOME<br/>
 ./start-single.sh<br/>
+./stop-single.sh<br/>
 
 # Test
 # When you run by run.sh, Overlord is at localhost:18090
