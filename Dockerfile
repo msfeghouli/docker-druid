@@ -15,6 +15,11 @@ RUN cd servers; ln -s `ls | grep druid-` druid; cd ..
 
 ENV DRUID_HOME /servers/druid
 
+ADD conf/single/jvm.config $DRUID_HOME/conf/druid/single
+ADD conf/broker/runtime.properties $DRUID_HOME/conf/druid/broker
+ADD conf/historical/runtime.properties $DRUID_HOME/conf/druid/historical
+ADD conf/middleManager/runtime.properties $DRUID_HOME/conf/druid/middleManager
+
 ADD Dockerfile /
 ADD README.md /
 
